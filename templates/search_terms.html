@@ -1,0 +1,24 @@
+<h1>View previous searches</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+{% block main_content %}
+<ul>
+<div>
+    {% for message in get_flashed_messages() %}
+    ***{{ message }}***
+    {% endfor %}
+</div>
+    {% for t in all_terms %}
+        <li><a href="{{ url_for('search_results',search_term=t.term) }}">{{ t.term }}</a></li><br>
+
+        <form method="POST" action="/delete/{{ t.term }}">
+            {{ form.hidden_tag() }}
+            {{ form.submit }}
+        </form>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}
+{% endblock %}

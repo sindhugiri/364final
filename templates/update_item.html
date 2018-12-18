@@ -1,0 +1,17 @@
+<h1>Choose the articles you want in {{ collection.name }} </h1>
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% block main_content %}
+
+<form method="POST" action="/update/{{ item_name }}">
+	{{ form.hidden_tag() }}
+	{{ form.updated_collection.label }} {{ form.updated_collection() }}
+	{{ form.submit.label }}{{ form.submit() }}
+</form>
+
+{% endblock %}
+{% endblock %}
+
+

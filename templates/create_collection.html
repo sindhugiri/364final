@@ -1,0 +1,14 @@
+<h1>Create a new collection of NY Times articles</h1>
+{% extends 'base.html' %}
+{% block content %}
+{% block main_content %}
+
+<form action="" method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.name.label }} {{ form.name() }}<br/><br/>
+	{{ form.article_picks.label }} {{ form.article_picks() }}<br/><br/>
+	{{ form.submit.label }}{{ form.submit() }}
+</form>
+
+{% endblock %}
+{% endblock %}

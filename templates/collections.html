@@ -1,0 +1,25 @@
+<h1>My collections</h1>
+
+{% extends 'base.html' %}
+{% block content %}
+{% block main_content %}
+
+<ul>
+    <div>
+        {% for message in get_flashed_messages() %}
+        ***{{ message }}***
+        {% endfor %}
+    </div>
+    
+{% for c in collections %}
+    <li><a href="http://localhost:5000/collection/{{ c.id }}">{{ c.name}}</a></li>
+
+    <form method="POST" action="/update/{{ c.name }}">
+        {{ form.hidden_tag() }}
+        {{ form.submit() }}
+    </form>
+{% endfor %}
+</ul>
+
+{% endblock %}
+{% endblock %}

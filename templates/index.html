@@ -1,0 +1,12 @@
+<h1>New York Times Application</h1>
+
+{% extends 'base.html' %}
+{% block content %}
+{% block main_content %}
+<form action="" method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.search.label }} {{ form.search() }}
+	{{ form.submit() }}
+</form>
+{% endblock %}
+{% endblock %}

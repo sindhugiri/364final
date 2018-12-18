@@ -1,0 +1,15 @@
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+
+<ul><i>
+    <li><a href="{{ url_for('index') }}">NYTimes Articles Search</a>
+    <li><a href="{{ url_for('create_collection') }}">Create Collection</a></li>
+    <li><a href="{{ url_for('search_terms') }}">Past Searches</a></li>
+    <li><a href="{{ url_for('collections') }}">NYTimes Article Collections</a></li></li></i>
+</ul>
+<p>----------</p>
+{% block content %}
+{% endblock %}

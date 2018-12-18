@@ -1,0 +1,14 @@
+<h1>{{ collection.name }}</h1>
+{% extends 'base.html' %}
+{% block content %}
+{% block main_content %}
+
+{% for sg in articles %}
+      <strong>{{ sg.headline }}</strong>
+      </br>
+    <br><br>
+
+{% endfor %}
+
+{% endblock %}
+{% endblock %}
